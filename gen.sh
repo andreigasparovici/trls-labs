@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-cd $1
-zip -r $1.zip */*.tex */*.pdf
-mv $1.zip ..
+
+zip -r $1.zip $1/*/*.tex $1/*/*.pdf
