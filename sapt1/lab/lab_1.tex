@@ -1,0 +1,69 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsfonts, amsmath, amsthm}
+\usepackage[utf8x]{inputenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+\newtheorem{teorema}{Teorema}
+\newtheorem{prop}{Propoziţia}
+\renewcommand{\proofname}{Demonstraţie}
+
+\title{\bf Primul meu document în \LaTeX}
+\author{Andrei Gasparovici}
+\date{}
+
+\begin{document}
+	\maketitle
+
+	\begin{abstract}
+		Acesta este primul meu document scris în \LaTeX.
+	\end{abstract}
+
+	\section{Introducere}
+
+	În continuare vom argumenta de ce \LaTeX este indicat pentru redactarea textelor şi a formulelor matematice.
+
+	\begin{itemize}
+	\item este un program stabil pe diverse platforme;
+	\item aduce noi îmbunătăţiri în ce priveşte calitatea şi uşurinţa de redactare, cât şi o afişare profesională
+	\end{itemize}
+
+	\section{Rezultate utilizate în document}
+
+	Acest document foloseşte următoarele rezultate teoretice:
+
+	\begin{teorema} \label{th-cos}
+		Într-un triunghi oarecare pătratul unei laturi este egal cu suma pătratelor celorlalte două laturi minus de două ori produsul lor multiplicat cu cosinusul unghiului dintre ele.
+
+		\begin{equation} \label{cos}
+			BC^2 = AB^2	+ AC^2 - 2(AB)(AC)\cos \hat A
+		\end{equation}
+
+		sau:
+
+		\begin{equation*}
+			\cos(\widehat{BAC}) = \frac{AB^2  + AC^2 - BC^2}{2(AB)(AC)}
+		\end{equation*}
+	\end{teorema}
+
+	În geometria plană, Teorema \ref{th-cos}, cunoscută şi sub numele de \textbf{teorema lui Pitagora generalizată} stabileşte relaţia dintre lungimea unei laturi a unui triunghi în funcţie de celelalte două laturi ale sale şi cosinusul unghiului dintr ele (vezi \eqref{cos}). A fost demonstrată de Al-Kashi.
+
+	Textul matematic se introduce prin inserarea de dolar în ambele capete astfel:
+	$\frac{\pi}{4} = \sum_{k=1}^\infty \frac{(-1)^{k+1}}{2k-1}$.
+
+	Dacă se doreşte afişarea ecuaţiei pe următorul rând centrată şi nenumerotată se foloseşte dublu dolar în ambele capete astfel:
+
+	$$\int_a^b f(x) dx = F(b) - F(a).$$
+
+	Dacă dorim să numerotăm ecuaţia folosim medium \texttt{equation} astfel:
+
+	\begin{equation} \label{eq-Stokes}
+		\iint_{\Sigma} \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)dy dz + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) dz dx + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dx dy = \oint_{\partial \Sigma} {P dx + Q dy + R dz}
+	\end{equation}
+
+	Ecuaţia \eqref{eq-Stokes} reprezint\u a formula lui Stokes.
+
+	\section{Concluzii}
+
+	Cu ajutorul unui număr mic de comenzi, uşor de înţeles putem realiza un document având o calitate tipografică deosebită.
+\end{document}

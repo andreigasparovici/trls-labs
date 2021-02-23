@@ -1,0 +1,15 @@
+\documentclass{article}
+
+\usepackage{indentfirst}
+
+\begin{document}
+
+Să ne imaginăm o competiţie în care doi jucători $A, B$ joacă o serie de cel mult $2n-1$ partide, câştigător fiind jucătorul care acumulează primul $n$ victorii. Presupunem că nu există partide egale, şi că rezultatele sunt independente între ele şi că pentru orice partidă există o probabilitate $p$ ca jucătorul $A$ să câştige, şi o probabilitate $1-p$ ca jucătorul $B$ să câştige.
+
+Ne propunem să calculăm $P(i, j)$, probabilitatea ca jucătorul $A$ să câştige competiţia, dat fiind că mai are nevoie de $i$ victorii, iar jucătorul $B$ mai are nevoie de $j$ victorii pentru a câştiga. La început evident, probabilitatea este $P(n, n)$ pentru că fiecare jucător mai are nevoie de $n$ victorii.
+
+Pentru $1 \leq i \leq n$ avem $P(0, i) = 1$ implică $P(i, 0) = 0$. Probabilitatea $P(0, 0)$ este nedefinită.
+
+Pentru $i, j \leq 1$ se poate calcula $P(i, j)$ după formula: $$P(i, j) = pP(i - 1, j) + qP(i, j-1)$$.
+
+\end{document}
