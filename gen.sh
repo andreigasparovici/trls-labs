@@ -5,5 +5,10 @@ if [ -z "$1" ]; then
 	exit
 fi
 
+if [ ! -d "$1" ]; then
+	echo "Directory does not exist"
+	exit
+fi
+
 zip -r $1.zip $1/*/*.tex $1/*/*.pdf
 echo "Done"
