@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{indentfirst}
+
+\begin{document}
+
+\subsubsection{Procesarea texturilor}
+
+\begin{minipage}{\textwidth}
+Un termen împrumutat din grafica 3D - textura - poate fi considerată o matrice uni-, bi- sau tri-dimensională de \textit{texeli} (texture-elements). Texelii pot fi reprezentaţi prin scalari (byte, float), sau 4-tuple (byte4, float4)
+
+În CUDA, texturile se disting ca o zonă de memorie specială, care poate fi citită cu ajutorul unor funcţii de acces speciale \texttt{tex1D(x)}, \texttt{tex2D(x, y)}, respectiv \texttt{tex3D(x, y, z)}. Texturile oferă următoarele facilităţi:
+
+\begin{itemize}
+	\item pentru dispozitivele mai vechi, citirea din memoria de textură este mai rapidă decât accesul din memoria globală dispozitiv \footnote{Arhitectura CUDA 2.x (Fermi) oferă memorie cache şi memoriei globale}.
+
+	\item se pot citi şi elemente de la coordonate ne-întregi, interpolarea (lineară) a valorilor efectuându-se de către hardware (de ex: \texttt{float a = tex2D(1.5, 3.25)}),
+
+	\item coordonatele care depăşesc domeniul texturii $[0 \dots N-1]$ se ajustează automat, fie forţându-le la marginile domeniilor $0, N-1$ fie calculând modulo $N$, configurabil,
+\end{itemize}
+
+\end{minipage}
+\end{document}

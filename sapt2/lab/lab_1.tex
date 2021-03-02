@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{multirow}
+
+\begin{document}
+
+\subsection*{Tabelul 1}
+
+\begin{minipage}{\textwidth}
+	\begin{center}
+		\begin{tabular}{|c|l|l|}
+		\hline
+			\multirow{4}{*}{Sisteme de formatare \footnote{Toate sistemele listate se bazează pe comenzi}}&Scribe & VMS, UNIX\\
+			& \TeX & VMS, UNIX\\
+			& \LaTeX & VMS, UNIX\\
+			& troff & UNIX\\
+		\hline
+			\multirow{4}{*}{Sisteme de procesare \footnote{Toate sistemele listate se bazează pe meniuri}}&WordStar & MSDOS\\
+			& Word Perfect & MSDOS, Macintosh\\
+			& MS Word & MSDOS, Macintosh\\
+			& MacWrite & Macintosh\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{minipage}
+
+\renewcommand{\tablename}{Tabelul}
+
+\subsection*{Tabelul 2}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{c c c}
+		\textbf{Produs} & \textbf{Descriere} & \textbf{Preţ (RON)} \\
+		\hline
+		Cod 1 & per gram & 13.65 \\
+		& la bucată & 0.01 \\
+		Cod 2 & la bax & 92.50 \\
+		Cod 3 & la bax & 33.33 \\
+		Cod 4 & congelat & 8.99 \\
+		\hline
+	\end{tabular}
+	\caption{Descrierea şi preţul produselor asociate}
+\end{table}
+
+\subsection*{Tabelul 3}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Cursuri} & \multicolumn{2}{c|}{\textbf{Tip}} \\
+		\cline{2-3}
+		\textbf{Seminarii} & \multirow{2}{*}{Obligatoriu} & \multirow{2}{*}{Opţional} \\
+		\textbf{Laboratoare} &  &\\
+		\hline
+		\hline
+		\textbf{Număr ore} & \multicolumn{2}{c|}{30} \\
+		\hline
+	\end{tabular}
+	\caption{}
+\end{table}
+
+\subsection*{Tabelul 4}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{c c c c c}
+		\hline
+		& x & y & w & z\\
+		\hline
+		\multicolumn{1}{c|}{variable1} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{b} & \multicolumn{1}{c|}{c} & d \\
+		\multicolumn{1}{c|}{variable2} & \multicolumn{1}{c|}{a} & \multicolumn{1}{c|}{b} & \multicolumn{1}{c|}{c} & d \\
+		\hline
+	\end{tabular}
+	\caption{}
+\end{table}
+
+\subsection*{Tabelul 5}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c| c| c| c| c| c| c|}
+		\hline
+		\multicolumn{2}{|c|}{\multirow{2}{*}{}} & \multicolumn{4}{c|}{\textbf{Rank}} & \multirow{2}{*}{\textbf{Total}} \\
+		\cline{3-6}
+		\multicolumn{1}{|c}{}& & A & B & C& Other & \\
+		\hline
+
+		\multirow{2}{*}{\textbf{Type}} & type 1& 10 & 21 & 6 & 3& 40 \\
+		\cline{2-7}
+		& type 2 & 10 & 21 & 6 & 3 & 40 \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Total}} & 18  & 35 & 11 & 5 & 69 \\
+		\hline
+	\end{tabular}
+	\caption{}
+\end{table}
+
+\subsection*{Tabelul 6}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|l| c| c| c|}
+		\hline
+		\multirow{2}{*}{Categoria font funciar} & \multicolumn{3}{c|}{Judeţul} \\
+		\cline{2-4}
+		& Călăraşi & Harghita & Vrancea \\
+		\hline
+		Teren arabil & 410871 ha & 78495 ha & 148069 ha \\
+		\hline
+		Teren pomi-viticol & 4564 ha & 816 ha & 30527 ha \\
+		\hline
+		Păşuni şi fâneţe & 9448 ha & 316182 ha & 76605 ha \\
+		\hline
+	\end{tabular}
+	\caption{Sursa datelor: Institutul Naţional de Statistică}
+\end{table}
+
+\end{document}

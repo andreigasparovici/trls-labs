@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsthm}
+
+\begin{document}
+
+\newtheorem{obs}{Observaţia}[section]
+
+\begin{obs}
+	Dacă $X$ este o variabilă aleatoare discretă ce ia valorile $x_1, x_2, x_3, \dots$ cu probabilităţile $p_1, p_2, p_3, \dots$, atunci au loc următoarele.
+
+	\begin{enumerate}
+		\item Dacă $I$ este un interval ce nu conţine nici una din valorile posibile ale variabilei aleatoare discrete $X$, atunci
+			\begin{equation}
+				P(X \in I) = 0.
+			\end{equation}
+
+		\item Probabilitatea ca variabila aleatoare $X$ să ia valori într-un interval $I = (a,b]$ este dată de
+			\begin{equation}
+				P(a < X \leq b) = \sum_{a < x_i \leq b} p_i,
+			\end{equation}
+
+		adică este egală cu suma probabilităţilor $p_i$ corespunzătoare valorilor posibile $x_i$ pentru care $a < x_i \leq b$.
+
+	\item Suma tuturor probabilităţilor $p_i$ corespunzătoare valorilor $x_i$ este egală cu $1$, adică
+		\begin{equation}
+			\sum_i p_i = 1
+		\end{equation}
+
+		Motivul este următorul:
+		$$
+			\sum_{i \geq 1} p_i = \sum_{i \geq 1} P(X = x_i) = P(X \in \{x_1, x_2, x_3, \dots\}) = P(\Omega) = 1.
+		$$
+	\end{enumerate}
+
+	Dacă $X$ este o variabilă aleatoare discretă, vom spune că funcţia de distribuţie corespunzătoare este o funcţie de distribuţie \textbf{discretă} (sau că $X$ are o distribuţie discretă).
+\end{obs}
+
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{article}
+
+\begin{document}
+\subsection*{Text 1}
+
+Un \textit{graf} este o pereche $G = \langle V,M \rangle$, unde $V$ este o mulţime de vârfuri, iar $M \subseteq V \times V$ este o mulţime de muchii. O muchie de la vârful $a$ la vârful $b$ este notată cu perechea ordonată $(a, b)$, dacă graful este \textit{orientat}, şi cu mulţimea $\{a, b\}$, dacă graful este \textit{neorientat}. În cele ce urmează vom presupune că vârfurile $a$ şi $b$ sunt diferite. Două vârfuri unite printr-o muchie se numesc \textit{adiacente}. Un drum este o succesiune de muchii de forma $$ (a_1, a_2), (a_2, a_3), \dots, (a_{n-1}, a_n) $$ sau de forma $$ \{a_1, a_2\}, \{a_2, a_3\}, \dots, \{a_{n-1}, a_n\} $$ după cum graful este orientat sau neorientat. \textit{Lungimea} drumului este egală cu numărul muchiilor care îl constituie Un \textit{drum simplu} este un drum în care nici un vârf nu se repetă. Un \textit{ciclu} este un drum care este simplu, cu excepţia primului şi ultimului vârf, care coincid. Un \textit{graf aciclic} este un graf fără cicluri. Un \textit{subgraf} a lui $G$ este un graf $\langle V', M' \rangle$, unde $V' \subseteq V$, iar $M'$ este formată din muchiile din $M$ care unesc vârfuri din $V'$. Un \textit{graf parţial} este un graf $\langle V, M'' \rangle$, unde $M'' \subseteq M$.
+
+\subsection*{Text 2}
+
+Există cel puţin trei moduri evidente de reprezentare ale unui graf:
+
+\begin{itemize}
+	\item Printr-o \textit{matrice de adiacenţă} $A$, în care $A[i, j] = true$ dacă vârfurile $i$ şi $j$ sunt adiacente, iar $A[i, j]=false$ în caz contrar. O variantă alternativă este să-i dăm lui $A[i, j]$ valoarea lungimii muchiei dintre vârfurile $i$ şi $j$, considerând $A[i, j]=+\infty$ atunci când cele două vârfuri nu sunt adiacente. Memoria necesară este în ordinul lui $n^2$. Cu această reprezentare, putem verifica uşor dacă două vârfuri sunt adiacente. Pe de altă parte, dacă dorim să aflăm toate vârfurile adiacente unui vârf dat, trebuie să analizăm o întreagă linie din matrice. Aceasta necesită $n$ operaţii (unde $n$ este numărul de vârfuri din graf), independent de numărul de muchii care conectează vârful respectiv.
+
+	\item Prin \textit{liste de adiacenţă}, adică prin ataşarea la fiecare vârf $i$ a listei de vârfuri adiacente lui (pentru grafuri orientate, este necesar ca muchia să plece din $i$). Într-un graf cu $m$ muchii, suma lungimilor listelor de adiacenţă este $2m$, dacă graful este neorientat, respectiv $m$ dacă graful este orientat. Dacă numărul muchiilor în graf este mic, această reprezentare este preferabilă din punct de vedere al memoriei necesare. Este posibil să examinăm toţi vecinii unui vârf dat, în medie, în mai puţin de $n$ operaţii. Pe de altă parte, pentru a determina dacă două vârfuri $i$ şi $j$ sunt adiacente, trebuie să analizăm lista de adiacenţă a lui $i$ (şi, posibil, lista de adiacenţă a lui $j$), ceea ce este mai puţin eficient decât consultarea unei valori logice în matricea de adiacenţă.
+
+	\item Printr-o \textit{listă de muchii}. Această reprezentare este eficientă atunci când avem de examinat toate muchiile grafului.
+\end{itemize}
+
+\end{document}
