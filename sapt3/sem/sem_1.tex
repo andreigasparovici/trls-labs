@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+Media variabilei aleatoare exponenţiale este dată de
+
+\begin{eqnarray*}
+	M(X) &=& \int_{-\infty}^\infty x f(x) dx\\
+	&=& \int_0^\infty x \left(\lambda e^{-\lambda x} \right) dx \\
+	&=& \int_0^\infty x \left(-e^{-\lambda x} \right)' dx \\
+	&=& \left. -x e^{-\lambda x} \right|_0^\infty - \int_0^\infty -e^{-\lambda x} dx \\
+	&=& \int_0^\infty e^{-\lambda x} dx \\
+	&=& \left. -\frac{e^{-\lambda x}}{\lambda} \right|_0^\infty \\
+	&=& -\frac{e^{-\infty}}{\lambda} - \left( -\frac{e^0}{\lambda} \right) \\
+	&=& \frac{1}{\lambda},
+\end{eqnarray*}
+
+iar dispersia este dată de
+
+\begin{eqnarray*}
+	\sigma^2(X) &=& M \left[ (X - M(X))^2 \right] \\
+	&=& \int_{-\infty}^\infty \left( x - \frac{1}{\lambda} \right)^2 (-\lambda e^{-\lambda x}) dx \\
+	&=& \int_{-\infty}^\infty \left( x - \frac{1}{\lambda} \right)^2 (e^{-\lambda x})' dx \\
+	&=& \left. \left(x - \frac{1}{\lambda}\right)^2 e^{-\lambda x} \right|_0^\infty - \int_0^\infty 2\left(x - \frac{1}{\lambda}\right) e^{-\lambda x} dx \\
+	&=& \frac{1}{\lambda^2} - 2\int_0^\infty \left(x - \frac{1}{\lambda}\right) \left(-\frac{e^{-\lambda x}}{\lambda}\right)'dx \\
+	&=& \frac{1}{\lambda^2} - \left.2 \left(x - \frac{1}{\lambda}\right)\left(-\frac{e^{-\lambda x}}{\lambda}\right)\right|_0^\infty + 2\int_0^\infty -\frac{e^{-\lambda x}}{\lambda} dx \\
+	&=& \frac{1}{\lambda^2} - \frac{2}{\lambda^2} - \frac{2}{\lambda} \int_0^\infty e^{-\lambda x} dx\\
+	&=& -\frac{1}{\lambda^2} - \frac{2}{\lambda} \left.\left(-\frac{e^{-\lambda x}}{\lambda}\right)\right|_0^\infty \\
+	&=& -\frac{1}{\lambda^2}+\frac{2}{\lambda^2} \\
+	&=& \frac{1}{\lambda^2}
+\end{eqnarray*}
+
+\end{document}

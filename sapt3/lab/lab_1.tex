@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amsfonts}
+
+\newtheorem{definition}{Definiţie}
+\newtheorem{theorem}{Teorema}
+\renewcommand{\proofname}{Demonstraţie}
+
+\begin{document}
+
+\subsection*{Repartiţia Poisson P$_0(\lambda)$}
+
+\begin{definition}
+	O variabilă aleatoare $X$ are o repartiţie Poission de parametru $\lambda$, $\lambda > 0$ dacă
+	\[
+		X \left({k \atop \frac{\lambda^k}{k!} e^{-\lambda} }\right)_{k \in \mathbb{N}}
+	\]
+\end{definition}
+
+Evident $\sum_{k=0}^\infty \frac{\lambda^k}{k!} e^{-\lambda} = e^{-\lambda} \sum_{k=0}^\infty \frac{\lambda^k}{k!} = e^{-\lambda}e^{\lambda} = 1$
+
+
+\noindent \textbf{Funcţia caracteristică:} $\varphi(t) = e^{\lambda(e^{it}-1)}$
+
+\begin{proof}
+	\begin{gather*}
+		\varphi(t) = M(e^{itX}) = \sum_{k=0}^\infty e^{itk} \frac{\lambda^k}{k!} e^{-\lambda} = e^{-\lambda}e^{e^{it}\lambda} \Longrightarrow \\
+		\varphi(t) = e^{\lambda(e^{it}-1)}
+	\end{gather*}
+\end{proof}
+
+\noindent \textbf{Media:} $M(X) = \lambda$
+
+\begin{proof}
+	\begin{gather*}
+		M(X) = \frac{1}{i} \varphi'(0) \\
+		\varphi'(t) = e^{\lambda(e^{it}-1)} \lambda e^{it} i \Longrightarrow \varphi'(0) = \lambda i \Longrightarrow M(X) = \lambda
+	\end{gather*}
+\end{proof}
+
+\noindent \textbf{Dispersia:} $D^2(X) = \lambda$
+
+\begin{proof}
+	\begin{gather*}
+		M(X^2) = \frac{1}{i^2}\varphi''(0) \\
+		\varphi''(t) = \lambda i \left[ e^{\lambda(e^{it} - 1)} \lambda e^{it} i e^{it} + e^{\lambda(e^{it} - 1)} e^{it} i \right] \Longrightarrow \varphi''(0) = \lambda i (\lambda i + i) = i^2(\lambda^2 + \lambda) \\
+		\Longrightarrow M(X^2) = \lambda^2 + \lambda \Longrightarrow D^(X) = \lambda^2 + \lambda - \lambda^2 \Longrightarrow D^2(X) = \lambda
+	\end{gather*}
+\end{proof}
+
+\noindent \textbf{Abaterea pătratică medie:} $\sigma(X) = \sqrt{D^2(X)} = \sqrt{\lambda}$
+
+\subsection*{Repartiţia uniformă continuă}
+
+\begin{definition}
+	O variabilă aleatoare $X$ are o repartiţie uniformă continuă de parametri $a$ şi $b$ dacă densitatea sa de repartiţie este:
+
+	\[
+		f(x) = \begin{cases}
+			\frac{1}{b - a} &, x \in [a, b], 0 \leq a < b \\
+			0 &, \text{în rest}
+		\end{cases}
+	\]
+
+	Avem că $f(x) \geq 0, \forall x \in \mathbb{R}$.
+
+	\[
+		\int_{\mathbb{R}} f(x)dx = \int_a^b \frac{1}{b - a} dx = \frac{1}{b - a} \left. x \right|_a^b = 1
+	\]
+\end{definition}
+
+\textbf{Media} unei variabile aleatoare $X$ cu repartiţia uniformă continuă este:
+\begin{gather*}
+	M(X) = \frac{a + b}{2} \\
+	M(X) = \int_{\mathbb{R}} x\cdot f(x)dx = \int_a^b x\cdot \frac{1}{b - a} dx = \frac{1}{b - a} \cdot \left. \frac{x^2}{2} \right|_a^b = \frac{b^2 - a^2}{2(b - a)} = \frac{a + b}{2}
+\end{gather*}
+
+\textbf{Dispersia} unei variabile aleatoare $X$ cu repartiţia uniformă continuă este:
+\begin{gather*}
+	D^2(X) = \frac{(b-a)^2}{12} \\
+	M(X^2) = \int_{\mathbb{R}} x^2 \cdot f(x) dx = \frac{1}{b - a} \int_a^b x^2 dx = \frac{b^2 + ab + a^2}{3} \\
+	D^2(X) = M(X^2) - (M(X))^2 = \frac{b^2 + ab + a^2}{3} - \left( \frac{a+b}{2} \right)^2 \\
+	\Longrightarrow D^2(X) = \frac{(b - a)^2}{12}
+\end{gather*}
+
+\textbf{Funcţia de repartiţie} a unei variabile aleatoare cu repartiţia uniformă continuă este:
+\[
+	F(x) = \begin{cases}
+		0 & ,x \in (-\infty, a] \\
+		\frac{x - a}{b - a} & ,x \in (a, b] \\
+		1 &, x \in (b, \infty)
+	\end{cases}
+\]
+
+\textbf{Funcţia caracteristică} a unei variabile aleatoare cu repartiţia uniformă continuă este:
+
+\begin{gather*}
+	\varphi(t) = \frac{e^{itb} - e^{ita}}{it(b-a)} \\
+	\varphi(t) = \int_{\mathbb{R}} e^{itx} \cdot f(x) dx = \int_a^b e^{itx} \frac{1}{b - a} dx = \frac{1}{b - a} \left. \frac{e^{itx}}{it} \right|_a^b = \frac{e^{itb} - e^{ita}}{it(b-a)}
+\end{gather*}
+
+\subsection*{Sisteme de ecuaţii liniare}
+
+Un ansamblu de egalităţi de forma:
+
+\begin{equation} \label{eq:sistem}
+	\begin{cases}
+		a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n = b_1 \\
+		a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n = b_2 \\
+		\dotfill \\
+		a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n = b_m 
+	\end{cases}
+\end{equation}
+
+se numeşte \textit{sistem de ecuaţii liniare cu $n$ necunoscute $x_1, x_2, \dots, x_n$}.\\
+Elementele $a_{ij}, i=\overline{1,m}, j=\overline{1,n}, a_{ij} \in \mathbb{R}$ se numesc \textit{coeficienţi}, iar elementele $b_i \in \mathbb{R}, i=\overline{1,m}$ se numesc \textit{termeni liberi}.
+
+\begin{theorem}[Regular lui Cramer]
+	Un sistem de ecuaţii de forma \eqref{eq:sistem} cu coeficienţi reali pentru care matricea coeficienţilor $A = (a_{ij})_{\substack{i=\overline{1,m} \\ j=\overline{1,n}}}$ are determinantul $\Delta \neq 0$ are o soluţie unică dată de egalităţile:
+
+	\[
+		x_1 \ \frac{\Delta x_1}{\Delta}, x_2 = \frac{\Delta x_2}{\Delta}, \dots, x_n = \frac{\Delta x_n}{\Delta},
+	\]
+
+\noindent unde $\Delta x_i$ se obţine din $\Delta$ înlocuind coloana $i$ cu coloana termenilor liberi.
+\end{theorem}
+
+Dacă sistemul admite:
+
+\begin{itemize}
+	\item o singură soluţie $\to$ sistem compatibil determinat
+	\item mai multe soluţii $\to$ sistem compatibil nedeterminat
+	\item nici o soluţie $\to$ sistem incompatibil
+\end{itemize}
+
+\end{document}
