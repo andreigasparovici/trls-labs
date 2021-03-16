@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{multirow}
+
+\begin{document}
+
+\begin{center}
+	{\Large Orar clasa}
+\end{center}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|>{\columncolor{Yellow}}c|>{\columncolor{Salmon}}c|>{\columncolor{Cerulean}}c|>{\columncolor{Green}}c|>{\columncolor{Periwinkle}}c|c|}
+		\hline
+		\textbf{Luni} & \textbf{Marţi} & \textbf{Miercuri} & \textbf{Joi} & \textbf{Vineri}\\
+		\hline
+		Comunicare & Matematica & Limba engleza & & \\
+		\hline
+		Matematica & & & & \\
+		\hline
+		Educatie fizica & & & & \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{\textbf{Nume}} & \multicolumn{3}{c|}{\textbf{Disciplina}}& \multirow{2}{*}{\textbf{Total}}\\
+		\cline{2-4}
+		& {\cellcolor{RubineRed} \textbf{Matematică}} & {\cellcolor{Cerulean} \textbf{Fizică}} & {\cellcolor{Purple} \textbf{Chimie}} & \\
+		\hline
+		\hline
+		\rowcolor{Orange}
+		Corina & 35 & 40 & 45 & 120 \\
+		\hline
+		\rowcolor{Yellow}
+		Mihai & 50 & 45 & 40 & 135 \\
+		\hline
+		\rowcolor{YellowGreen}
+		Cosmin & 9 & 20 & 30 & 59 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\end{document}

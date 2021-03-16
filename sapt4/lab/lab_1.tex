@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{amsthm, amsfonts, amsmath}
+
+\newtheorem{definition}{Definiţia}
+
+\begin{document}
+\subsection*{Matrice şi determinanţi}
+
+\begin{definition}
+	Se numeşte \textbf{matrice cu $m$ linii şi $n$ coloane} sau \textbf{matrice $m \times n$} o funcţie reală $f : N_m \times N_n \to \mathbb{R}$.
+\end{definition}
+
+Fiecărei perechi $(i, j) \in N_m \times N_n$ îi corespunde prin funcţia $f$ elementul $f(i, j) = a_{ij} \in \mathbb{R}$, $i=\overline{1,m}, j=\overline{1,n}$. Ansamblul valorilor funcţiei $f$ se reprezintă în general sub forma unui tabel cu $m$ linii şi $n$ coloane
+
+\begin{equation*}
+	A = \begin{pmatrix}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		a_{21} & a_{22} & \ldots & a_{2n}\\
+		\ldots & \ldots & \ldots & \ldots \\
+		a_{m1} & a_{m2} & \ldots & a_{mn}
+\end{pmatrix}
+	\text{ sau }
+	A = (a_{ij})_{\substack{i=\overline{1, m}\\j=\overline{1, n}}}
+\end{equation*}
+
+Fie $A \in M_n(\mathbb{R}), A = (a_{ij})_{\substack{i=\overline{1, m}\\j=\overline{1, n}}}$. Fiecărei matrice $A \in M_n(\mathbb{R})$ i se asociază un număr real numit \textit{determinantul matricei $A$}, notat $det(A)$.
+
+
+Acesta se calculează în felul următor:
+\begin{itemize}
+	\item $A = a_{11} \in M_1(\mathbb{R}) \Longrightarrow det(A) = a_{11}$
+	\item $A = \begin{pmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{pmatrix} \in M_2(\mathbb{R}) \Longrightarrow det(A) = \begin{vmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{vmatrix} = a_{11}\cdot a_{22} - a_{12}\cdot a_{21}$
+		\item $A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix} \in M_3(\mathbb{R}) \Longrightarrow \\
+				det(A) = \begin{vmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{vmatrix} = a_{11}a_{22}a_{33}+a_{21}a_{32}a_{13}+a_{31}a_{12}a_{23} - a_{31}a_{22}a_{13} - a_{32}a_{23}a_{11} - a_{33}a_{21}a_{12}$
+\end{itemize}
+
+Un sistem de ecuaţii poate fi scris şi sub formă matriceală astfel:
+
+$$A \cdot X = B \text{ sau } \sum_{j=1}^n a_{ij}x_j = b_i, i=\overline{1,m}$$
+$$A = \begin{pmatrix}a_{11} & \ldots & a_{1n}\\\ldots & \ldots & \ldots\\a_{m1} & \ldots & a_{mn}\end{pmatrix}, B = \begin{pmatrix}b_1\\b_2\\\ldots\\b_m\end{pmatrix}, X = \begin{pmatrix}x_1\\x_2\\\ldots\\x_n\end{pmatrix}$$
+
+\end{document}

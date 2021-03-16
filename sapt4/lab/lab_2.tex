@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+\begin{document}
+
+\doublespacing
+
+\subsection*{Conversia din baza 10 în baza 2}
+
+Fie $x=a_n \ldots a_0$ numărul scris în baza 10. Conversia în baza 2 a numărului $x$ se efectuează după următoarele reguli:
+
+\begin{itemize}[label=$\star$]
+	\item Se împarte numărul $x$ la 2 iar restul va reprezenta cifra de ordin 0 a numărului scris în noua bază $(b_0)$.
+	\item Câtul obţinut la împărţirea anterioară se împarte la 2 şi se obţine cifra de ordin imediat superior a numărului scris în noua bază. Secvenţa de împărţiri se repetă până când se ajunge la câtul 0.
+	\item Restul de la a $k$-a împărţire va reprezenta cifra $b_{k-1}$. Restul de la ultima împărţire reprezintă cifra de ordin maxim în reprezentarea numărului în baza 2.
+\end{itemize}
+
+Metoda conduce la obţinerea rezultatului după un număr finit de împărţiri, întrucât în mod inevitabil se ajunge la un cât nul. În plus, toate resturile obţinute aparţin mulţimii $\{0, 1\}$.
+
+\textbf{Exemplu.}
+
+Fie $x=13$ numărul în baza 10. Secvenţa de împărţiri este:
+
+\begin{enumerate}[label={(\arabic*)}]
+	\item se împarte $13$ la 2 şi se obţine câtul 6 şi restul 1 (deci $b_0 = 1$)
+	\item se împarte $\enspace 6$ la 2 şi se obţine câtul 3 şi restul 0 (deci $b_1 = 0$)
+	\item se împarte $\enspace 3$ la 2 şi se obţine câtul 1 şi restul 1 (deci $b_2 = 1$)
+	\item se împarte $\enspace 1$ la 2 şi se obţine câtul 0 şi restul 1 (deci $b_3 = 1$)
+\end{enumerate}
+
+Prin urmare $(13)_{10} = (1101)_2$.
+
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{alltt}
+
+\begin{document}
+
+\begin{enumerate}
+	\item Algoritmul lui Euclid
+
+	Descrierea în pseudocod a algoritmului lui Euclid este următoarea:
+
+	\fbox{\begin{minipage}{\textwidth}
+	\begin{alltt}
+		\textbf{int} a, b, d, i, r;\\
+		\textbf{read} a, b; \\
+		\textbf{if}(a<b) \{ d=a; i=b; \} \textbf{else} \{ d=b;i=a; \}; \\
+		r = d \% i; \\
+		\textbf{while} (r != 0) \{ d=i;i=r;r=d \% i; \}; \\
+		\textbf{write} i;
+	\end{alltt}
+	\end{minipage}}
+
+	\item Schema lui Horner
+	
+	Descrierea în pseudocod a schemei lui Horner este următoarea:
+
+	\fbox{\begin{minipage}{\textwidth}
+	\begin{alltt}
+		\textbf{int} n, a, b, i;\\
+		\textbf{read} n, a, b; \\
+		\textbf{int} a[0..n], c[0..n-1];\\
+		\textbf{for} i=n,0,-1 \textbf{read} a[i];\\
+		c[n-1] = b * a[n];\\
+		\textbf{for} i=1,n-1 c[n-i-1] = b * c[n-1] + a[n-i];\\
+		val := b * c[1] + a[1];\\
+		\textbf{write} val;
+	\end{alltt}
+	\end{minipage}}
+
+	\item Conversia unui număr natural din baza 10 în baza 2.
+
+	Fie $n$ un număr întreg pozitiv. Pentru a determina cifrele reprezentării în baza doi a acestui număr se poate folosi următoarea metodă:
+
+	Se împarte $n$ la 2, iar restul va reprezenta cifra de rang 0. Câtul obţinut la împărţirea anterioară se împarte din nou la 2, iar restul obţinut va reprezenta cifra de ordin 1 ş.a.m.d. Secvenţa de împărţiri continuă până la obţinerea unui cât nul.
+
+	Descrierea în pseudocod a acestui algotim este:
+
+	\fbox{\begin{minipage}{\textwidth}
+	\begin{alltt}
+		\textbf{int} n, d, c, r;\\
+		\textbf{read} n; \\
+		d = n; \\
+		c = d / 2; \hspace{.5cm} {\normalfont /* câtul împărţirii întregi a lui d la 2*/} \\
+		r = d \% 2; \hspace{.5cm} {\normalfont /* restul împărţirii întregi a lui d la 2*/} \\
+		\textbf{write} r; \\
+		\textbf{while} (c != 0) \{ \\
+		\hspace*{.5cm} d = c;\\
+		\hspace*{.5cm} c = d / 2; \\
+		\hspace*{.5cm} r = d \% 2; \\
+		\hspace*{.5cm} \textbf{write} r;\\
+		\}
+	\end{alltt}
+	\end{minipage}}
+
+\end{enumerate}
+
+
+\end{document}
