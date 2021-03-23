@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\begin{document}
+
+\renewcommand{\figurename}{Figura}
+
+\begin{figure}[htbp]
+\centering
+
+\subfigure[Georg Cantor]{
+	\label{fig:cantor}
+	\includegraphics[width=.3\textwidth, height=4.8cm]{img/cantor}
+}
+\subfigure[Leonhard Euler]{
+	\label{fig:euler}
+	\includegraphics[width=.3\textwidth, height=4.8cm]{img/euler}
+}
+\subfigure[Kurt Gödel]{
+	\label{fig:godel}
+	\includegraphics[width=.3\textwidth, height=4.8cm]{img/godel}
+}
+
+\caption{Matematicieni} \label{fig:matematicieni}
+
+\end{figure}
+
+\end{document}

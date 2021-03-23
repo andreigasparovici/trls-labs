@@ -1,0 +1,124 @@
+\documentclass{article}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\begin{document}
+
+\begin{algorithm}
+\caption{Algoritmul lui Euclid}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{Euclid}{$a,b$}\Comment{C.m.m.d.c al lui a si b}
+\State $r\gets a\bmod b$
+\While{$r\not=0$}\Comment{Avem raspunsul daca $r=0$}
+\State $a\gets b$
+\State $b\gets r$
+\State $r\gets a\bmod b$
+\EndWhile\label{euclidendwhile}
+\State \textbf{return} $b$\Comment{C.m.m.d.c este b}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Algoritmi elementari de sortare}\label{sortare}
+\begin{algorithmic}[1]
+\Procedure{insert}{$T[1 .. n]$}
+	\For{$i \gets 2 \textbf{ to } n$}
+		\State $x \gets T[i]; j \gets i-1$
+		\While{$j > 0 \textbf{ and } x < T[j]$}
+			\State $T[j+1] \gets T[j]$
+			\State $j \gets j-1$
+		\EndWhile
+		\State $T[j+1] \gets x$
+	\EndFor
+\EndProcedure
+
+\Procedure{select}{$T[1 .. n]$}
+	\For{$i \gets 1 \textbf{ to } n-1$}
+		\State $minj \gets i; minx \gets T[i]$
+		\For{$j \gets i+1 \textbf{ to } n$}
+			\If{$T[j] < minx$}
+				\State{$minj \gets i$}
+				\State{$minx \gets T[j]$}
+			\EndIf
+		\EndFor
+		\State $T[minj] \gets T[i]$
+		\State $T[i] \gets T[minx]$
+	\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Algoritm Greedy}\label{greedy}
+\begin{algorithmic}[1]
+\Procedure{greedy}{$C$}
+	\State \Comment $C$ este mulţimea candidaţilor
+	\State $S \gets \emptyset$ \Comment $S$ este mulţimea în care construim soluţia
+
+	\While{$\textbf{not} \textit{soluţie}(S) \textbf{ and } C \neq \emptyset$}
+		\State $x \gets$ un element din $C$ care maximizează/minimizează $select(x)$
+		\State $C \gets C \setminus \{x\}$
+		\If{$fezabil(S \cup \{x\})$}
+			\State $S \gets S \cup \{x\}$
+		\EndIf
+	\EndWhile
+
+	\If{$\textit{soluţie}(S)$}
+		\State \textbf{return} $S$	
+	\Else
+		\State \textbf{return} "nu există soluţie"
+	\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Algoritmul îmulţirii "a la russe"}\label{russe}
+\begin{algorithmic}[1]
+\Procedure{russe}{$A, B$}
+	\State \textbf{arrays} $X, Y$
+	\State \Comment{iniţializare}
+	\State $X[1] \gets A; Y[1] \gets B$
+	\State $i \gets 1$ \Comment se construiesc cele două coloane
+	\While{$X[i] > 1$}
+		\State $X[i+1] \gets X[i] \textbf{ div } 2$ \Comment \textbf{div} reprezintă împărţirea întreagă
+		\State $Y[i+1] \gets Y[i] + Y[i]$
+		\State $i \gets i+1$
+	\EndWhile
+	\State \Comment adună numerele $Y[i]$ corespunzătoare numerelor $X[i]$ impare
+	\State $prod \gets 0$
+	\While{$i>0$}
+		\If{$X[i]$ este impar}
+			\State $prod \gets prod + Y[i]$
+			\State $i \gets i - 1$
+		\EndIf
+	\EndWhile
+	\State \textbf{return } $prod$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Şirul lui Fibonacci}\label{fibonacci}
+\begin{algorithmic}[1]
+\Procedure{fib3}{$n$}
+	\State $i \gets 1; j \gets 0; k \gets 0; h \gets 1$
+	\While{$n > 0$}
+		\If{$n$ este impar}
+			\State $t \gets jh$
+			\State $j \gets ih + jk + t$
+			\State $i \gets ik + t$
+		\EndIf
+		\State $t \gets h^2$
+		\State $h \gets 2kh+t$
+		\State $k \gets k^2+t$
+		\State $n \gets n \textbf{ div } 2$
+	\EndWhile
+	\State \textbf{return } $j$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
