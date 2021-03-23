@@ -10,5 +10,6 @@ if [ ! -d "$1" ]; then
 	exit
 fi
 
-zip -r $1.zip $1/*/*.tex $1/*/*.pdf
+zip -r $1.zip $(find $1 -type f)
+
 echo "Done"
