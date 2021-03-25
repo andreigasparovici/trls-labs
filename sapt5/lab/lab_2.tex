@@ -5,6 +5,8 @@
 
 \begin{document}
 
+\section*{Algoritmi}
+
 \begin{algorithm}
 \caption{Algoritmul lui Euclid}\label{euclid}
 \begin{algorithmic}[1]
@@ -24,7 +26,7 @@
 \caption{Algoritmi elementari de sortare}\label{sortare}
 \begin{algorithmic}[1]
 \Procedure{insert}{$T[1 .. n]$}
-	\For{$i \gets 2 \textbf{ to } n$}
+	\For{$i \gets 2$ \textbf{to} $n$}
 		\State $x \gets T[i]; j \gets i-1$
 		\While{$j > 0 \textbf{ and } x < T[j]$}
 			\State $T[j+1] \gets T[j]$
@@ -35,9 +37,9 @@
 \EndProcedure
 
 \Procedure{select}{$T[1 .. n]$}
-	\For{$i \gets 1 \textbf{ to } n-1$}
+	\For{$i \gets 1$ \textbf{to} $n-1$}
 		\State $minj \gets i; minx \gets T[i]$
-		\For{$j \gets i+1 \textbf{ to } n$}
+		\For{$j \gets i+1$ \textbf{to} $n$}
 			\If{$T[j] < minx$}
 				\State{$minj \gets i$}
 				\State{$minx \gets T[j]$}
@@ -54,13 +56,13 @@
 \caption{Algoritm Greedy}\label{greedy}
 \begin{algorithmic}[1]
 \Procedure{greedy}{$C$}
-	\State \Comment $C$ este mulţimea candidaţilor
+	\Comment $C$ este mulţimea candidaţilor
 	\State $S \gets \emptyset$ \Comment $S$ este mulţimea în care construim soluţia
 
-	\While{$\textbf{not} \textit{soluţie}(S) \textbf{ and } C \neq \emptyset$}
+	\While{\textbf{not} \textit{soluţie}$(S)$ \textbf{ and } $C \neq \emptyset$}
 		\State $x \gets$ un element din $C$ care maximizează/minimizează $select(x)$
 		\State $C \gets C \setminus \{x\}$
-		\If{$fezabil(S \cup \{x\})$}
+		\If{$ fezabil(S \cup \{x\})$}
 			\State $S \gets S \cup \{x\}$
 		\EndIf
 	\EndWhile
@@ -79,15 +81,14 @@
 \begin{algorithmic}[1]
 \Procedure{russe}{$A, B$}
 	\State \textbf{arrays} $X, Y$
-	\State \Comment{iniţializare}
-	\State $X[1] \gets A; Y[1] \gets B$
+	\State $X[1] \gets A; Y[1] \gets B$ \Comment{iniţializare}
 	\State $i \gets 1$ \Comment se construiesc cele două coloane
 	\While{$X[i] > 1$}
 		\State $X[i+1] \gets X[i] \textbf{ div } 2$ \Comment \textbf{div} reprezintă împărţirea întreagă
 		\State $Y[i+1] \gets Y[i] + Y[i]$
 		\State $i \gets i+1$
 	\EndWhile
-	\State \Comment adună numerele $Y[i]$ corespunzătoare numerelor $X[i]$ impare
+	\Comment adună numerele $Y[i]$ corespunzătoare numerelor $X[i]$ impare
 	\State $prod \gets 0$
 	\While{$i>0$}
 		\If{$X[i]$ este impar}
@@ -95,7 +96,7 @@
 			\State $i \gets i - 1$
 		\EndIf
 	\EndWhile
-	\State \textbf{return } $prod$
+	\State \textbf{return} $prod$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
@@ -114,7 +115,7 @@
 		\State $t \gets h^2$
 		\State $h \gets 2kh+t$
 		\State $k \gets k^2+t$
-		\State $n \gets n \textbf{ div } 2$
+		\State $n \gets n$ \textbf{div} $2$
 	\EndWhile
 	\State \textbf{return } $j$
 \EndProcedure
